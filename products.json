@@ -1,0 +1,234 @@
+[
+  {
+    "id": 0,
+    "img": "img/product/36.jpeg",
+    "name": "Tecoo Camon",
+    "price": 150,
+    "old_price": 200,
+    "catetory": "smartElectronics"
+  },
+  {
+    "id": 1,
+    "img": "img/product/56.jpeg",
+    "name": "Speakers",
+    "price": 15,
+    "old_price": 30,
+    "catetory": "AccesoriesGaming"
+  },
+  {
+    "id": 2,
+    "img": "img/product/17.png",
+    "name": "Mini surveillance camera",
+    "price": 40,
+    "old_price": 100,
+    "catetory": "Digita&camera"
+  },
+  {
+    "id": 3,
+    "img": "img/product/22.jpeg",
+    "name": "Cover phone",
+    "price": 3,
+    "old_price": 10,
+    "catetory": "AccesoriesPhones"
+  },
+  {
+    "id": 4,
+    "img": "img/product/58.jpeg",
+    "name": "Tempered Glass",
+    "price": 5,
+    "old_price": 10,
+    "catetory": "AccesoriesPhones"
+  },
+  {
+    "id": 5,
+    "img": "img/product/51.jpeg",
+    "name": "wireless headphones",
+    "price": 10,
+    "old_price": 20,
+    "catetory": "smartElectronics"
+  },
+  {
+    "id": 6,
+    "img": "img/product/12.png",
+    "name": "HP DeskJet 2710 Printer",
+    "price": 50,
+    "old_price": 100,
+    "catetory": "Digita&camera"
+  },
+  {
+    "id": 7,
+    "img": "img/product/15.png",
+    "name": "Infinix Smart 9 Plus",
+    "price": 240,
+    "old_price": 300,
+    "catetory": "smartElectronics"
+  },
+  {
+    "id": 8,
+    "img": "img/product/27.jpeg",
+    "name": "Mac Book (by Apple)",
+    "price": 500,
+    "catetory": "smartElectronics"
+  },
+  {
+    "id": 9,
+    "img": "img/product/41.jpeg",
+    "name": "Cover iphone 14pro",
+    "price": 20,
+    "catetory": "AccesoriesPhones"
+  },
+  {
+    "id": 10,
+    "img": "img/product/37.jpeg",
+    "name": "Samsung Galaxy",
+    "price": 250,
+    "catetory": "smartElectronics"
+  },
+  {
+    "id": 11,
+    "img": "img/product/30.jpeg",
+    "name": "Samsung Galaxy Tab S8",
+    "price": 300,
+    "catetory": "smartElectronics"
+  },
+  {
+    "id": 12,
+    "img": "img/product/54.jpeg",
+    "name": "iphone 14pro",
+    "price": 400,
+    "catetory": "smartElectronics"
+  },
+  {
+    "id": 13,
+    "img": "img/product/48.jpeg",
+    "name": "Apple watch",
+    "price": 100,
+    "catetory": "smartElectronics"
+  },
+  {
+    "id": 14,
+    "img": "img/product/40.jpeg",
+    "name": "tripods phone",
+    "price": 20,
+    "catetory": "AccesoriesPhones"
+  },
+  {
+    "id": 15,
+    "img": "img/product/68.jpg",
+    "name": "Lighting Mode Phone",
+    "price": 30,
+    "catetory": "AccesoriesPhones"
+  },
+  {
+    "id": 16,
+    "img": "img/product/67.jpg",
+    "name": "Charger type C",
+    "price": 10,
+    "catetory": "AccesoriesPhones"
+  },
+  {
+    "id": 17,
+    "img": "img/product/57.jpeg",
+    "name": "wireless Charger(15w)",
+    "price": 50,
+    "catetory": "AccesoriesPhones"
+  },
+  {
+    "id": 18,
+    "img": "img/product/43.jpeg",
+    "name": "powerbank 5000mah",
+    "price": 225,
+    "catetory": "AccesoriesPhones"
+  },
+  {
+    "id": 19,
+    "img": "img/product/69.jpeg",
+    "name": "purple/black headphones",
+    "price": 50,
+    "catetory": "AccesoriesGaming"
+  },
+  {
+    "id": 20,
+    "img": "img/product/70.jpeg",
+    "name": "purple/black mouse",
+    "price": 20,
+    "catetory": "AccesoriesGaming"
+  },
+  {
+    "id": 21,
+    "img": "img/product/71.jpeg",
+    "name": "purple/black Gaming Box",
+    "price": 100,
+    "catetory": "AccesoriesGaming"
+  },
+  {
+    "id": 22,
+    "img": "img/product/72.jpeg",
+    "name": "PlayStation PS5",
+    "price": 150,
+    "catetory": "AccesoriesGaming"
+  },
+  {
+    "id": 23,
+    "img": "img/product/74.jpeg",
+    "name": "Mic Wireless",
+    "price": 50,
+    "catetory": "AccesoriesGaming"
+  },
+  {
+    "id": 24,
+    "img": "img/product/73.jpeg",
+    "name": "Console Nintendo Switch ",
+    "price": 30,
+    "catetory": "AccesoriesGaming"
+  },
+  {
+    "id": 25,
+    "img": "img/product/24.png",
+    "name": "Computers Screen",
+    "price": 100,
+    "catetory": "AccesoriesGaming"
+  },
+  {
+    "id": 26,
+    "img": "img/product/9.png",
+    "name": "CBarcode Reader Scanner",
+    "price": 30,
+    "catetory": "Digita&camera"
+  },
+  {
+    "id": 27,
+    "img": "img/product/10.png",
+    "name": "projector",
+    "price": 150,
+    "catetory": "Digita&camera"
+  },
+  {
+    "id": 28,
+    "img": "img/product/75.jpg",
+    "name": "The Instax Mini Link 2",
+    "price": 100,
+    "catetory": "Digita&camera"
+  },
+  {
+    "id": 29,
+    "img": "img/product/66.jpg",
+    "name": "Fujifilm INSTAX Mini ",
+    "price": 100,
+    "catetory": "Digita&camera"
+  },
+  {
+    "id": 30,
+    "img": "img/product/76.jpg",
+    "name": "Pocket Camera",
+    "price": 200,
+    "catetory": "Digita&camera"
+  },
+  {
+    "id": 31,
+    "img": "img/product/77.jpg",
+    "name": "sony digital camera",
+    "price": 300,
+    "catetory": "Digita&camera"
+  }
+]

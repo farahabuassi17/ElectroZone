@@ -1,0 +1,1094 @@
+
+
+const sheetName = 'Sheet1'
+const scriptProp = PropertiesService.getScriptProperties()
+
+function intialSetup () {
+  const activeSpreadsheet = SpreadsheetApp.getActiveSpreadsheet()
+  scriptProp.setProperty('key', activeSpreadsheet.getId())
+}
+
+function doPost (e) {
+  const lock = LockService.getScriptLock()
+  lock.tryLock(10000)
+
+  try {
+    const doc = SpreadsheetApp.openById(scriptProp.getProperty('key'))
+    const sheet = doc.getSheetByName(sheetName)
+
+    const headers = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getValues()[0]
+    const nextRow = sheet.getLastRow() + 1
+
+    const newRow = headers.map(function(header) {
+      return header === 'Date' ? new Date() : e.parameter[header]
+    })
+
+    sheet.getRange(nextRow, 1, 1, newRow.length).setValues([newRow])
+
+    return ContentService
+      .createTextOutput(JSON.stringify({ 'result': 'success', 'row': nextRow }))
+      .setMimeType(ContentService.MimeType.JSON)
+  }
+
+  catch (e) {
+    return ContentService
+      .createTextOutput(JSON.stringify({ 'result': 'error', 'error': e }))
+      .setMimeType(ContentService.MimeType.JSON)
+  }
+
+  finally {
+    lock.releaseLock()
+  }
+}
+<!--product sale-->
+  <div class="col-lg-3 col-md-6 col-sm-12">
+
+            <span class="sale_present">%30</span>
+            <div class="img_product">
+              <a href="#"><img src="img/product/36.jpeg" alt="phone"></a>
+            </div>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="name_product"><a href="#">Tecoo Camon(6GB,128GB)
+              </a></p>
+            <div class="price">
+              <p><span>$150</span></p>
+              <p class="old_price">$200</p>
+            </div>
+            <div class="icons">
+              <span class="btn_add_cart">
+                <i class="fa-solid fa-cart-shopping"></i>add to cart
+              </span>
+              <span class="icon_product"><i
+                  class="fa-regular fa-heart"></i></span>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <span class="sale_present">%50</span>
+            <div class="img_product">
+              <a href="#"><img src="img/product/12.png" alt="Headphone"></a>
+            </div>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half"></i>
+            </div>
+            <p class="name_product"><a href="#"> Invoice printer
+              </a></p>
+            <div class="price">
+              <p><span>$50</span></p>
+              <p class="old_price">$100</p>
+            </div>
+            <div class="icons">
+              <span class="btn_add_cart">
+                <i class="fa-solid fa-cart-shopping"></i>add to cart
+              </span>
+              <span class="icon_product"><i
+                  class="fa-regular fa-heart"></i></span>
+            </div>
+
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <span class="sale_present">%50</span>
+            <div class="img_product">
+              <a href="#"><img src="img/product/56.jpeg" alt="Headphone"></a>
+            </div>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="name_product"><a href="#">Speakers
+              </a></p>
+            <div class="price">
+              <p><span>$15</span></p>
+              <p class="old_price">$30</p>
+            </div>
+            <div class="icons">
+              <span class="btn_add_cart">
+                <i class="fa-solid fa-cart-shopping"></i>add to cart
+              </span>
+              <span class="icon_product"><i
+                  class="fa-regular fa-heart"></i></span>
+            </div>
+
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <span class="sale_present">%30</span>
+            <div class="img_product">
+              <a href="#"><img src="img/product/17.png" alt="Headphone"></a>
+            </div>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="name_product"><a href="#">Mini surveillance camera
+              </a></p>
+            <div class="price">
+              <p><span>$60</span></p>
+              <p class="old_price">$100</p>
+            </div>
+            <div class="icons">
+              <span class="btn_add_cart">
+                <i class="fa-solid fa-cart-shopping"></i>add to cart
+              </span>
+              <span class="icon_product"><i
+                  class="fa-regular fa-heart"></i></span>
+            </div>
+
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <span class="sale_present">%70</span>
+            <div class="img_product">
+              <a href="#"><img src="img/product/22.jpeg" alt="Headphone"></a>
+            </div>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="name_product"><a href="#">Cover phone
+              </a></p>
+            <div class="price">
+              <p><span>$3</span></p>
+              <p class="old_price">$10</p>
+            </div>
+            <div class="icons">
+              <span class="btn_add_cart">
+                <i class="fa-solid fa-cart-shopping"></i>add to cart
+              </span>
+              <span class="icon_product"><i
+                  class="fa-regular fa-heart"></i></span>
+            </div>
+
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <span class="sale_present">%50</span>
+            <div class="img_product">
+              <a href="#"><img src="img/product/58.jpeg" alt="Headphone"></a>
+            </div>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="name_product"><a href="#">Tempered Glass
+              </a></p>
+            <div class="price">
+              <p><span>$5</span></p>
+              <p class="old_price">$10</p>
+            </div>
+            <div class="icons">
+              <span class="btn_add_cart">
+                <i class="fa-solid fa-cart-shopping"></i>add to cart
+              </span>
+              <span class="icon_product"><i
+                  class="fa-regular fa-heart"></i></span>
+            </div>
+
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <span class="sale_present">%50</span>
+            <div class="img_product">
+              <a href="#"><img src="img/product/15.png" alt="Galaxy"></a>
+            </div>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half"></i>
+            </div>
+            <p class="name_product"><a href="#">Samsung Galaxy 9
+              </a></p>
+            <div class="price">
+              <p><span>$100</span></p>
+              <p class="old_price">$200</p>
+            </div>
+            <div class="icons">
+              <span class="btn_add_cart">
+                <i class="fa-solid fa-cart-shopping"></i>add to cart
+              </span>
+              <span class="icon_product"><i
+                  class="fa-regular fa-heart"></i></span>
+            </div>
+
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <span class="sale_present">%15</span>
+            <div class="img_product">
+              <a href="#"><img src="img/product/51.jpeg" alt="Headphone"></a>
+            </div>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="name_product"><a href="#">wireless headphones (blue)
+              </a></p>
+            <div class="price">
+              <p><span>$10</span></p>
+              <p class="old_price">$20</p>
+            </div>
+            <div class="icons">
+              <span class="btn_add_cart ">
+                <i class="fa-solid fa-cart-shopping"></i>add to cart
+              </span>
+              <span class="icon_product"><i
+                  class="fa-regular fa-heart"></i></span>
+            </div>
+
+          </div>
+<!--smartElectronics-->
+<div class="col-lg-3 col-md-6 col-sm-12">
+
+            <span class="sale_present">%30</span>
+            <div class="img_product">
+              <a href="#"><img src="img/product/36.jpeg" alt="phone"></a>
+            </div>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="name_product"><a href="#">Tecoo Camon(6GB,128GB)
+              </a></p>
+            <div class="price">
+              <p><span>$150</span></p>
+              <p class="old_price">$200</p>
+            </div>
+            <div class="icons">
+              <span class="btn_add_cart">
+                <i class="fa-solid fa-cart-shopping"></i>add to cart
+              </span>
+              <span class="icon_product"><i
+                  class="fa-regular fa-heart"></i></span>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="img_product">
+              <a href="#"><img src="img/product/27.jpeg" alt="Laptops"></a>
+            </div>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half"></i>
+            </div>
+            <p class="name_product"><a href="#"> Mac Book (by Apple)
+              </a></p>
+            <div class="price">
+              <p><span>$500</span></p>
+            </div>
+            <div class="icons">
+              <span class="btn_add_cart">
+                <i class="fa-solid fa-cart-shopping"></i>add to cart
+              </span>
+              <span class="icon_product"><i
+                  class="fa-regular fa-heart"></i></span>
+            </div>
+
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="img_product">
+              <a href="#"><img src="img/product/49.jpeg" alt="Headphone"></a>
+            </div>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="name_product"><a href="#">wireless headphones
+              </a></p>
+            <div class="price">
+              <p><span>$30</span></p>
+            </div>
+            <div class="icons">
+              <span class="btn_add_cart">
+                <i class="fa-solid fa-cart-shopping"></i>add to cart
+              </span>
+              <span class="icon_product"><i
+                  class="fa-regular fa-heart"></i></span>
+            </div>
+
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="img_product">
+              <a href="#"><img src="img/product/37.jpeg" alt="Galaxy"></a>
+            </div>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="name_product"><a href="#">Samsung Galaxy
+              </a></p>
+            <div class="price">
+              <p><span>$250</span></p>
+            </div>
+            <div class="icons">
+              <span class="btn_add_cart">
+                <i class="fa-solid fa-cart-shopping"></i>add to cart
+              </span>
+              <span class="icon_product"><i
+                  class="fa-regular fa-heart"></i></span>
+            </div>
+
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="img_product">
+              <a href="#"><img src="img/product/30.jpeg" alt="Headphone"></a>
+            </div>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="name_product"><a href="#">Samsung Galaxy Tab S8 Uitra 5G
+              </a></p>
+            <div class="price">
+              <p><span>$300</span></p>
+            </div>
+            <div class="icons">
+              <span class="btn_add_cart">
+                <i class="fa-solid fa-cart-shopping"></i>add to cart
+              </span>
+              <span class="icon_product"><i
+                  class="fa-regular fa-heart"></i></span>
+            </div>
+
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="img_product">
+              <a href="#"><img src="img/product/54.jpeg" alt="Headphone"></a>
+            </div>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="name_product"><a href="#">iphone 14pro
+              </a></p>
+            <div class="price">
+              <p><span>$400</span></p>
+            </div>
+            <div class="icons">
+              <span class="btn_add_cart">
+                <i class="fa-solid fa-cart-shopping"></i>add to cart
+              </span>
+              <span class="icon_product"><i
+                  class="fa-regular fa-heart"></i></span>
+            </div>
+
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <span class="sale_present">%50</span>
+            <div class="img_product">
+              <a href="#"><img src="img/product/15.png" alt="Galaxy"></a>
+            </div>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half"></i>
+            </div>
+            <p class="name_product"><a href="#">Samsung Galaxy 9
+              </a></p>
+            <div class="price">
+              <p><span>$100</span></p>
+              <p class="old_price">$200</p>
+            </div>
+            <div class="icons">
+              <span class="btn_add_cart">
+                <i class="fa-solid fa-cart-shopping"></i>add to cart
+              </span>
+              <span class="icon_product"><i
+                  class="fa-regular fa-heart"></i></span>
+            </div>
+
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="img_product">
+              <a href="#"><img src="img/product/48.jpeg" alt="Headphone"></a>
+            </div>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="name_product"><a href="#"> Apple watch
+              </a></p>
+            <div class="price">
+              <p><span>$100</span></p>
+            </div>
+            <div class="icons">
+              <span class="btn_add_cart ">
+                <i class="fa-solid fa-cart-shopping"></i>add to cart
+              </span>
+              <span class="icon_product"><i
+                  class="fa-regular fa-heart"></i></span>
+            </div>
+
+          </div>
+<!--AccesoriesPhones-->
+<div class="col-lg-3 col-md-6 col-sm-12">
+
+            <span class="sale_present">%30</span>
+            <div class="img_product">
+              <a href="#"><img src="img/product/41.jpeg" alt="phone"></a>
+            </div>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="name_product"><a href="#"> Cover iphone 14pro
+              </a></p>
+            <div class="price">
+              <p><span>$20</span></p>
+              <p class="old_price">$27</p>
+            </div>
+            <div class="icons">
+              <span class="btn_add_cart">
+                <i class="fa-solid fa-cart-shopping"></i>add to cart
+              </span>
+              <span class="icon_product"><i
+                  class="fa-regular fa-heart"></i></span>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="img_product">
+              <a href="#"><img src="img/product/40.jpeg" alt="Laptops"></a>
+            </div>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half"></i>
+            </div>
+            <p class="name_product"><a href="#">tripods phone
+              </a></p>
+            <div class="price">
+              <p><span>$20</span></p>
+            </div>
+            <div class="icons">
+              <span class="btn_add_cart">
+                <i class="fa-solid fa-cart-shopping"></i>add to cart
+              </span>
+              <span class="icon_product"><i
+                  class="fa-regular fa-heart"></i></span>
+            </div>
+
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="img_product">
+              <a href="#"><img
+                  src="img/product/d3ffcf2ecd8234092a9b130bec3903cc.jpg"
+                  alt="Headphone"></a>
+            </div>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="name_product"><a href="#"> Lighting Mode Phone Ring Light
+              </a></p>
+            <div class="price">
+              <p><span>$30</span></p>
+            </div>
+            <div class="icons">
+              <span class="btn_add_cart">
+                <i class="fa-solid fa-cart-shopping"></i>add to cart
+              </span>
+              <span class="icon_product"><i
+                  class="fa-regular fa-heart"></i></span>
+            </div>
+
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="img_product">
+              <a href="#"><img
+                  src="img/product/d162cf01416acb1dab0bfd9a50335648.jpg"
+                  alt="Galaxy"></a>
+            </div>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="name_product"><a href="#"> Charger type C
+              </a></p>
+            <div class="price">
+              <p><span>$10</span></p>
+            </div>
+            <div class="icons">
+              <span class="btn_add_cart">
+                <i class="fa-solid fa-cart-shopping"></i>add to cart
+              </span>
+              <span class="icon_product"><i
+                  class="fa-regular fa-heart"></i></span>
+            </div>
+
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="img_product">
+              <a href="#"><img src="img/product/57.jpeg" alt="Headphone"></a>
+            </div>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="name_product"><a href="#">wireless Charger(15w,3 in 1)
+              </a></p>
+            <div class="price">
+              <p><span>$50</span></p>
+            </div>
+            <div class="icons">
+              <span class="btn_add_cart">
+                <i class="fa-solid fa-cart-shopping"></i>add to cart
+              </span>
+              <span class="icon_product"><i
+                  class="fa-regular fa-heart"></i></span>
+            </div>
+
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <span class="sale_present">%70</span>
+            <div class="img_product">
+              <a href="#"><img src="img/product/22.jpeg" alt="Headphone"></a>
+            </div>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="name_product"><a href="#"> Cover phone
+              </a></p>
+            <div class="price">
+              <p><span>$3</span></p>
+              <p class="old_price">$10</p>
+            </div>
+            <div class="icons">
+              <span class="btn_add_cart">
+                <i class="fa-solid fa-cart-shopping"></i>add to cart
+              </span>
+              <span class="icon_product"><i
+                  class="fa-regular fa-heart"></i></span>
+            </div>
+
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <span class="sale_present">%50</span>
+            <div class="img_product">
+              <a href="#"><img src="img/product/58.jpeg" alt="Galaxy"></a>
+            </div>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="name_product"><a href="#">Tempered Glass
+              </a></p>
+            <div class="price">
+              <p><span>$5</span></p>
+              <p class="old_price">$10</p>
+            </div>
+            <div class="icons">
+              <span class="btn_add_cart">
+                <i class="fa-solid fa-cart-shopping"></i>add to cart
+              </span>
+              <span class="icon_product"><i
+                  class="fa-regular fa-heart"></i></span>
+            </div>
+
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="img_product">
+              <a href="#"><img src="img/product/43.jpeg" alt="Headphone"></a>
+            </div>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="name_product"><a href="#"> powerbank 5000mah
+              </a></p>
+            <div class="price">
+              <p><span>$40</span></p>
+            </div>
+            <div class="icons">
+              <span class="btn_add_cart ">
+                <i class="fa-solid fa-cart-shopping"></i>add to cart
+              </span>
+              <span class="icon_product"><i
+                  class="fa-regular fa-heart"></i></span>
+            </div>
+          </div>
+<!--product Accesories Gaming-->
+ <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="img_product">
+              <a href="#"><img src="img/product/63 (8).jpeg" alt="phone"></a>
+            </div>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="name_product"><a href="#">purple/black headphones Gaming
+              </a></p>
+            <div class="price">
+              <p><span>$50</span></p>
+            </div>
+            <div class="icons">
+              <span class="btn_add_cart">
+                <i class="fa-solid fa-cart-shopping"></i>add to cart
+              </span>
+              <span class="icon_product"><i
+                  class="fa-regular fa-heart"></i></span>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="img_product">
+              <a href="#"><img src="img/product/63 (9).jpeg" alt="Laptops"></a>
+            </div>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half"></i>
+            </div>
+            <p class="name_product"><a href="#">purple/black mouse
+              </a></p>
+            <div class="price">
+              <p><span>$20</span></p>
+            </div>
+            <div class="icons">
+              <span class="btn_add_cart">
+                <i class="fa-solid fa-cart-shopping"></i>add to cart
+              </span>
+              <span class="icon_product"><i
+                  class="fa-regular fa-heart"></i></span>
+            </div>
+
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="img_product">
+              <a href="#"><img
+                  src="img/product/63 (6).jpeg"
+                  alt="Headphone"></a>
+            </div>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="name_product"><a href="#"> purple/black Gaming Box
+              </a></p>
+            <div class="price">
+              <p><span>$100</span></p>
+            </div>
+            <div class="icons">
+              <span class="btn_add_cart">
+                <i class="fa-solid fa-cart-shopping"></i>add to cart
+              </span>
+              <span class="icon_product"><i
+                  class="fa-regular fa-heart"></i></span>
+            </div>
+
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="img_product">
+              <a href="#"><img
+                  src="img/product/63 (5).jpeg"
+                  alt="Galaxy"></a>
+            </div>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="name_product"><a href="#"> PlayStation PS5
+              </a></p>
+            <div class="price">
+              <p><span>$150</span></p>
+            </div>
+            <div class="icons">
+              <span class="btn_add_cart">
+                <i class="fa-solid fa-cart-shopping"></i>add to cart
+              </span>
+              <span class="icon_product"><i
+                  class="fa-regular fa-heart"></i></span>
+            </div>
+
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="img_product">
+              <a href="#"><img src="img/product/63 (12).jpeg"
+                  alt="Headphone"></a>
+            </div>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="name_product"><a href="#"> Mic Wireless
+              </a></p>
+            <div class="price">
+              <p><span>$40</span></p>
+            </div>
+            <div class="icons">
+              <span class="btn_add_cart">
+                <i class="fa-solid fa-cart-shopping"></i>add to cart
+              </span>
+              <span class="icon_product"><i
+                  class="fa-regular fa-heart"></i></span>
+            </div>
+
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <span class="sale_present">%50</span>
+            <div class="img_product">
+              <a href="#"><img src="img/product/56.jpeg" alt="Headphone"></a>
+            </div>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="name_product"><a href="#"> Speakers
+              </a></p>
+            <div class="price">
+              <p><span>$15</span></p>
+              <p class="old_price">$30</p>
+            </div>
+            <div class="icons">
+              <span class="btn_add_cart">
+                <i class="fa-solid fa-cart-shopping"></i>add to cart
+              </span>
+              <span class="icon_product"><i
+                  class="fa-regular fa-heart"></i></span>
+            </div>
+
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="img_product">
+              <a href="#"><img src="img/product/63 (7).jpeg" alt="Galaxy"></a>
+            </div>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="name_product"><a href="#">Console Nintendo Switch Oled
+              </a></p>
+            <div class="price">
+              <p><span>$30</span></p>
+            </div>
+            <div class="icons">
+              <span class="btn_add_cart">
+                <i class="fa-solid fa-cart-shopping"></i>add to cart
+              </span>
+              <span class="icon_product"><i
+                  class="fa-regular fa-heart"></i></span>
+            </div>
+
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="img_product">
+              <a href="#"><img src="img/product/24.png" alt="Headphone"></a>
+            </div>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="name_product"><a href="#"> Computers Screen
+              </a></p>
+            <div class="price">
+              <p><span>$100</span></p>
+            </div>
+            <div class="icons">
+              <span class="btn_add_cart ">
+                <i class="fa-solid fa-cart-shopping"></i>add to cart
+              </span>
+              <span class="icon_product"><i
+                  class="fa-regular fa-heart"></i></span>
+            </div>
+
+          </div>
+<!--product Digita&camera-->
+ <div class="col-lg-3 col-md-6 col-sm-12">
+            <span class="sale_present">%50</span>
+            <div class="img_product">
+              <a href="#"><img src="img/product/12.png" alt="phone"></a>
+            </div>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half"></i>
+            </div>
+            <p class="name_product"><a href="#">Invoice printer
+              </a></p>
+            <div class="price">
+              <p><span>$50</span></p>
+              <p class="old_price">$100</p>
+            </div>
+            <div class="icons">
+              <span class="btn_add_cart">
+                <i class="fa-solid fa-cart-shopping"></i>add to cart
+              </span>
+              <span class="icon_product"><i
+                  class="fa-regular fa-heart"></i></span>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="img_product">
+              <a href="#"><img src="img/product/9.png" alt="Laptops"></a>
+            </div>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half"></i>
+            </div>
+            <p class="name_product"><a href="#">Barcode Reader Scanner
+              </a></p>
+            <div class="price">
+              <p><span>$30</span></p>
+            </div>
+            <div class="icons">
+              <span class="btn_add_cart">
+                <i class="fa-solid fa-cart-shopping"></i>add to cart
+              </span>
+              <span class="icon_product"><i
+                  class="fa-regular fa-heart"></i></span>
+            </div>
+
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="img_product">
+              <a href="#"><img
+                  src="img/product/10.png"
+                  alt="Headphone"></a>
+            </div>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="name_product"><a href="#"> projector
+              </a></p>
+            <div class="price">
+              <p><span>$70</span></p>
+            </div>
+            <div class="icons">
+              <span class="btn_add_cart">
+                <i class="fa-solid fa-cart-shopping"></i>add to cart
+              </span>
+              <span class="icon_product"><i
+                  class="fa-regular fa-heart"></i></span>
+            </div>
+
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="img_product">
+              <a href="#"><img
+                  src="img/product/f5caf14f125d5d5fb7d927a922794e09.jpg"
+                  alt="Galaxy"></a>
+            </div>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="name_product"><a href="#">The Instax Mini Link 2
+              </a></p>
+            <div class="price">
+              <p><span>$150</span></p>
+            </div>
+            <div class="icons">
+              <span class="btn_add_cart">
+                <i class="fa-solid fa-cart-shopping"></i>add to cart
+              </span>
+              <span class="icon_product"><i
+                  class="fa-regular fa-heart"></i></span>
+            </div>
+
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="img_product">
+              <a href="#"><img src="img/product/66.jpg"
+                  alt="Headphone"></a>
+            </div>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="name_product"><a href="#"> Fujifilm INSTAX Mini Instant
+              </a></p>
+            <div class="price">
+              <p><span>$100</span></p>
+            </div>
+            <div class="icons">
+              <span class="btn_add_cart">
+                <i class="fa-solid fa-cart-shopping"></i>add to cart
+              </span>
+              <span class="icon_product"><i
+                  class="fa-regular fa-heart"></i></span>
+            </div>
+
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <span class="sale_present">%30</span>
+            <div class="img_product">
+              <a href="#"><img src="img/product/17.png" alt="Headphone"></a>
+            </div>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="name_product"><a href="#"> Mini surveillance camera
+              </a></p>
+            <div class="price">
+              <p><span>$60</span></p>
+              <p class="old_price">$100</p>
+            </div>
+            <div class="icons">
+              <span class="btn_add_cart">
+                <i class="fa-solid fa-cart-shopping"></i>add to cart
+              </span>
+              <span class="icon_product"><i
+                  class="fa-regular fa-heart"></i></span>
+            </div>
+
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="img_product">
+              <a href="#"><img
+                  src="img/product/31da58afa19caa1f3f6a840043eb8d81.jpg"
+                  alt="Galaxy"></a>
+            </div>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="name_product"><a href="#"> Pocket Camera
+              </a></p>
+            <div class="price">
+              <p><span>$200</span></p>
+            </div>
+            <div class="icons">
+              <span class="btn_add_cart">
+                <i class="fa-solid fa-cart-shopping"></i>add to cart
+              </span>
+              <span class="icon_product"><i
+                  class="fa-regular fa-heart"></i></span>
+            </div>
+
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <div class="img_product">
+              <a href="#"><img
+                  src="img/product/3748e35b042167de152199c9c0a0fcdc.jpg"
+                  alt="Headphone"></a>
+            </div>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <p class="name_product"><a href="#">sony digital camera
+              </a></p>
+            <div class="price">
+              <p><span>$250</span></p>
+            </div>
+            <div class="icons">
+              <span class="btn_add_cart ">
+                <i class="fa-solid fa-cart-shopping"></i>add to cart
+              </span>
+              <span class="icon_product"><i
+                  class="fa-regular fa-heart"></i></span>
+            </div>
+
+          </div>

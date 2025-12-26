@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ElectroZone | متجر الأجهزة</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!--swiper css -->
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!--icon-->
+    <link rel="icon" href="img/icon.png">
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  </head>
+
+  <body>
+    <div class="cart_overlay" onclick="open_close_cart()"></div>
+    <div class="cart">
+      <div class="top_cart">
+        <h3>Cart Items : <span class="Count_item_cart">0</span></h3>
+        <span onclick="open_close_cart()" class="close_cart">
+          <i class="fa-regular fa-circle-xmark"></i>
+        </span>
+      </div>
+
+      <div class="items_in_cart" id="cart_items">
+
+      </div>
+
+      <div class="bottom_cart">
+
+        <div class="total">
+          <p>subtotal</p>
+          <p class="price_cart_toral">$0</p>
+        </div>
+
+        <div class="button_cart">
+          <a href="checkout.html" class="btn_add_cart btn">Checkout</a>
+          <span onclick="open_close_cart()"
+            class="btn_add_cart trans_bg btn">Shop
+            More</span>
+        </div>
+
+      </div>
+    </div>
+    <!--header -->
+    <header>
+      <!-- top header -->
+      <div class=" top_header py-3">
+        <div class="row container">
+          <div class="col logo_title">
+            <a href="#" class="logo">
+              <img src="img/icon.png" alt="icon">
+              <h1 class="title">ElectroZone</h1>
+            </a>
+          </div>
+          <div class="col">
+            <form action class="search_box">
+              <div class="select_box">
+                <select id="category" name="category">
+                  <option value="All Categories">All Categories</option>
+                  <option value="Smart electronics"> Smart electronics</option>
+                  <option value=" Accesories Gaming"> Accesories Gaming</option>
+                  <option value="Digita & camera"> Digita & camera</option>
+                  <option value="Accesories Phones">Accesories Phones</option>
+                </select>
+              </div>
+              <input type="text" name="search" id="search"
+                placeholder="Search for Products" required>
+
+              <button type="submit">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+            </form>
+          </div>
+          <div class=" col-lg-3 header_icons justify-content-end">
+            <div class="icon">
+              <a href="#">
+                <i class="fa-regular fa-heart"></i>
+                <span class="count count_favourite">0</span>
+              </a>
+            </div>
+
+            <div onclick="open_close_cart()" class="icon">
+              <i class="fa-solid fa-cart-shopping"></i>
+              <span class="count count_item_header" id="cart_count">0</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--bottom header -->
+      <div class="bottom_header py-3">
+        <div class="container">
+          <nav class="nav">
+            <div class="category_nav">
+              <div onclick="Open_Categ_list()" class="category_btn">
+                <i class="fa-solid fa-bars"></i>
+                <p>Browse Category</p>
+                <i class="fa-solid fa-angle-down"></i>
+              </div>
+
+              <div class="category_nav_list">
+                <a href="#product_Sale">Top 8 Offers</a>
+                <a href="#product_smart">Smart electronics</a>
+                <a href="#productAccesoriesGaming">Accesories Gaming</a>
+                <a href="#productAccesoriesPhones">Accesories Phones</a>
+                <a href="#productDigita&camera">Digita & camera</a>
+              </div>
+            </div>
+            <!-- Burger Icon (Mobile) -->
+            <div class="burger_menu" onclick="toggleMenu()">
+              <i class="fa-solid fa-bars"></i>
+            </div>
+            <ul class="nav_links">
+
+              <li class="active"><a href="#home">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#AccesoriesPhones">Accesories</a></li>
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Contact</a></li>
+
+            </ul>
+
+          </nav>
+          <div class="login_signup btns">
+            <a href="#" class="btn">Login <i
+                class="fa-solid fa-right-to-bracket"></i></a>
+
+            <a href="#" class="btn">Sign UP <i
+                class="fa-solid fa-user-plus"></i></a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!--home section-->
+    <section class="home" id="home">
+      <div id="carouselExampleIndicators" class="carousel slide"
+        data-bs-ride="carousel" data-bs-interval="3000">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="0" class="active"
+            aria-current="true" aria-label="Slide 1"
+            style="background-color: #ff8c00;"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide-to="1" aria-label="Slide 2"
+            style="background-color: #ff8c00;"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active c-item">
+            <img src="img/IMG_20251223_185151_311.jpg"
+              class="d-block w-100 c-img" alt="Electronics">
+            <div class="carousel-caption custom-caption">
+              <h2>Electronic Devices</h2>
+              <p>
+                Discover the newest electronics with high performance,
+                modern design, and advanced technology for your daily needs.
+              </p>
+              <a href="#" class="btn btn-shop">Shop Now</a>
+            </div>
+          </div>
+          <div class="carousel-item c-item">
+            <img src="img/IMG_20251223_185404_514.jpg"
+              class="d-block w-100 c-img" alt="watch">
+            <div class="carousel-caption custom-caption">
+              <span class="badge-offer">NEW</span>
+              <h2>Smart Watches</h2>
+              <p>Modern design, powerful features, and long battery life.</p>
+              <a href="#" class="btn btn-shop">Shop Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--banner 1-->
+    <section class="banner_1">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-3 col-md-6">
+            <div class="box small-card">
+              <a href="#" class="link_btn"></a>
+              <div class="card-content">
+                <img src="img/product/43.jpeg" alt>
+                <div class="text">
+                  <h5>Break Disc</h5>
+                  <h5>deals on this</h5>
+                  <div class="sale">
+                    <p>Up <br> to </p>
+                    <span>70%</span>
+                    <h6>Shop Now</h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="box small-card">
+              <a href="#" class="link_btn"></a>
+              <div class="card-content">
+                <img src="img/product/3.png" alt>
+                <div class="text">
+                  <h5>Break Disc</h5>
+                  <h5>deals on this</h5>
+                  <div class="sale">
+                    <p>Up <br> to </p>
+                    <span>70%</span>
+                    <h6>Shop Now</h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="box small-card">
+              <a href="#" class="link_btn"></a>
+              <div class="card-content">
+                <img src="img/product/59.jpeg" alt>
+                <div class="text">
+                  <h5>Break Disc</h5>
+                  <h5>deals on this</h5>
+                  <div class="sale">
+                    <p>Up <br> to </p>
+                    <span>70%</span>
+                    <h6>Shop Now</h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="box small-card">
+              <a href="#" class="link_btn"></a>
+              <div class="card-content">
+                <img src="img/product/41.jpeg" alt>
+                <div class="text">
+                  <h5>Break Disc</h5>
+                  <h5>deals on this</h5>
+                  <div class="sale">
+                    <p>Up <br> to </p>
+                    <span>70%</span>
+                    <h6>Shop Now</h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--product sale-->
+    <section class="product_Sale">
+      <div class="container">
+        <!-- HOT DEALS -->
+        <div class="section-divider">
+          <span class="section-title">
+            <i class="fa-solid fa-tags"></i>
+            HOT DEALS
+          </span>
+        </div>
+        <div class="row g-4" id="product_Sale">
+
+        </div>
+      </div>
+    </section>
+    <!--banner 2-->
+    <section class="banner_2">
+      <div class="container">
+        <div class="row g-3">
+          <div class="col-lg-3 col-md-6">
+            <div class="box small-card">
+              <a href="#product_smart" class="link_btn"></a>
+              <div class="card-content">
+                <img src="img/product/47.jpeg" alt>
+                <div class="text">
+                  <h5>smart electronics </h5>
+                  <div class="shop">
+                    <h6>> Shop Now</h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="box small-card">
+              <a href="#productAccesoriesPhones" class="link_btn"></a>
+              <div class="card-content">
+                <img src="img/product/57.jpeg" alt>
+                <div class="text">
+                  <h5>Accesories Phones</h5>
+                  <div class="shop">
+                    <h6>> Shop Now</h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="box small-card">
+              <a href="#productAccesoriesGaming" class="link_btn"></a>
+              <div class="card-content">
+                <img src="img/product/63 (1).jpeg" alt>
+                <div class="text">
+                  <h5>Accesories Gaming </h5>
+                  <h5></h5>
+                  <div class="shop">
+                    <h6>> Shop Now</h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="box small-card">
+              <a href="#productDigita&camera" class="link_btn"></a>
+              <div class="card-content">
+                <img src="img/product/66.jpg" alt>
+                <div class="text">
+                  <h5> Digita & camera</h5>
+                  <div class="shop">
+                    <h6>> Shop Now</h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--product smart electronics -->
+    <section class="product_smartElectronics product">
+      <div class="container">
+        <!--smart electronics -->
+        <div class="section-divider" id="product_smart">
+          <span class="section-title">
+            <i class="fa-solid fa-tags"></i>
+            smart electronics
+          </span>
+        </div>
+        <div class="row g-4" id="smartElectronics">
+        </div>
+      </div>
+    </section>
+    <!--product Accesories Phones-->
+    <section class="product_AccesoriesPhones product">
+      <div class="container">
+        <!--Accesories Phones-->
+        <div class="section-divider" id="productAccesoriesPhones">
+          <span class="section-title">
+            <i class="fa-solid fa-tags"></i>
+            Accesories Phones
+          </span>
+        </div>
+        <div class="row g-4" id="AccesoriesPhones">
+        </div>
+      </div>
+    </section>
+    <!--product  Accesories Gaming-->
+    <section class="product_AccesoriesGaming product">
+      <div class="container">
+        <!--Accesories Gaming-->
+        <div class="section-divider" id="productAccesoriesGaming">
+          <span class="section-title">
+            <i class="fa-solid fa-tags"></i>
+            Accesories Gaming
+          </span>
+        </div>
+        <div class="row g-4" id="AccesoriesGaming">
+        </div>
+      </div>
+    </section>
+    <!--product Digita & camera-->
+    <section class="product_Digita&camera product">
+      <div class="container">
+        <!--"Digita & Computers-->
+        <div class="section-divider" id="productDigita&camera">
+          <span class="section-title">
+            <i class="fa-solid fa-tags"></i>
+            Digita & camera
+          </span>
+        </div>
+        <div class="row g-4" id="Digita&camera">
+
+        </div>
+      </div>
+    </section>
+    <!--banner 3--->
+    <section class="banner_3">
+      <div class="container">
+        <div class="row  g-4 justify-content-center">
+          <div class="col-lg-3 col-md-6 feature-box ">
+            <div class="text-center">
+              <i class="fa-solid fa-star icon"></i>
+              <h5 class="mt-3">Original Products</h5>
+              <a href="#" class="more-link">More Details</a>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 feature-box">
+            <div class="text-center">
+              <i class="fa-solid fa-shield-halved icon"></i>
+              <h5 class="mt-3">1-Year Warranty</h5>
+              <a href="#" class="more-link">More Details</a>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 feature-box">
+            <div class="text-center">
+              <i class="fa-solid fa-lock icon"></i>
+              <h5 class="mt-3">Secure Payment</h5>
+              <a href="#" class="more-link">More Details</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!--  What Our Customers Say-->
+    <section class="reviews-section py-5">
+      <div class="container">
+
+        <div class="section-divider" id="productDigita&camera">
+          <span class="section-title">
+            <i class="fa-solid fa-tags"></i>
+            What Our Customers Say
+          </span>
+        </div>
+
+        <div class="row g-4">
+
+          <!-- CARD 1 -->
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="review-card">
+              <div class="review-icon">
+                <i class="fa-solid fa-star"></i>
+              </div>
+
+              <img src="img/product/36.jpeg" class="product-img"
+                alt="product">
+
+              <h5 class="customer-name">Ahmed</h5>
+              <p class="review-text">Great quality and fast delivery.</p>
+
+              <span class="review-date">
+                <i class="fa-regular fa-calendar"></i> Feb 2025
+              </span>
+
+              <a href="#" class="see-more">See more</a>
+            </div>
+          </div>
+
+          <!-- CARD 2 -->
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="review-card">
+              <div class="review-icon">
+                <i class="fa-solid fa-shield"></i>
+              </div>
+
+              <img src="img/product/54.jpeg" class="product-img"
+                alt="product">
+
+              <h5 class="customer-name">Basma</h5>
+              <p class="review-text">Amazing device, I really love it.</p>
+
+              <span class="review-date">
+                <i class="fa-regular fa-calendar"></i> Feb 2025
+              </span>
+
+              <a href="#" class="see-more">See more</a>
+            </div>
+          </div>
+
+          <!-- CARD 3 -->
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="review-card">
+              <div class="review-icon">
+                <i class="fa-solid fa-thumbs-up"></i>
+              </div>
+
+              <img src="img/product/15.png" class="product-img" alt="product">
+
+              <h5 class="customer-name">Omar</h5>
+              <p class="review-text">Good price.</p>
+
+              <span class="review-date">
+                <i class="fa-regular fa-calendar"></i> Jan 2025
+              </span>
+
+              <a href="#" class="see-more">See more</a>
+            </div>
+          </div>
+
+          <!-- CARD 4 -->
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="review-card">
+              <div class="review-icon">
+                <i class="fa-solid fa-mobile-screen"></i>
+              </div>
+
+              <img src="img/product/30.jpeg" class="product-img"
+                alt="product">
+
+              <h5 class="customer-name">Nour</h5>
+              <p class="review-text">Excellent device.</p>
+
+              <span class="review-date">
+                <i class="fa-regular fa-calendar"></i> Jan 2025
+              </span>
+
+              <a href="#" class="see-more">See more</a>
+            </div>
+          </div>
+
+          <!-- CARD 5 -->
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="review-card">
+              <div class="review-icon">
+                <i class="fa-solid fa-bolt"></i>
+              </div>
+
+              <img src="img/product/27.jpeg" class="product-img"
+                alt="product">
+
+              <h5 class="customer-name">Lina</h5>
+              <p class="review-text">Fast shipping & great packaging.</p>
+
+              <span class="review-date">
+                <i class="fa-regular fa-calendar"></i> Dec 2024
+              </span>
+
+              <a href="#" class="see-more">See more</a>
+            </div>
+          </div>
+
+          <!-- CARD 6 -->
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="review-card">
+              <div class="review-icon">
+                <i class="fa-solid fa-gem"></i>
+              </div>
+
+              <img src="img/product/48.jpeg" class="product-img"
+                alt="product">
+
+              <h5 class="customer-name">Samer</h5>
+              <p class="review-text">High quality and original product.</p>
+
+              <span class="review-date">
+                <i class="fa-regular fa-calendar"></i> Dec 2024
+              </span>
+
+              <a href="#" class="see-more">See more</a>
+            </div>
+          </div>
+
+          <!-- CARD 7 -->
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="review-card">
+              <div class="review-icon">
+                <i class="fa-solid fa-check"></i>
+              </div>
+
+              <img src="img/product/22.jpeg" class="product-img"
+                alt="product">
+
+              <h5 class="customer-name">Mariam</h5>
+              <p class="review-text">Good brand — recommended.</p>
+
+              <span class="review-date">
+                <i class="fa-regular fa-calendar"></i> Nov 2024
+              </span>
+
+              <a href="#" class="see-more">See more</a>
+            </div>
+          </div>
+
+          <!-- CARD 8 -->
+          <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="review-card">
+              <div class="review-icon">
+                <i class="fa-solid fa-circle-nodes"></i>
+              </div>
+
+              <img src="img/product/51.jpeg" class="product-img"
+                alt="product">
+
+              <h5 class="customer-name">Rayan</h5>
+              <p class="review-text">Sound quality is very clear.</p>
+
+              <span class="review-date">
+                <i class="fa-regular fa-calendar"></i> Nov 2024
+              </span>
+
+              <a href="#" class="see-more">See more</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!--footer-->
+    <footer class="py-5 footer-section">
+      <div class="container">
+
+        <div class="row">
+
+          <!-- logo & about -->
+          <div class="col-md-4 mb-4 align-self-start">
+            <h3 class="fw-bold text-success">ElectroZone</h3>
+            <p class="text-muted">
+              Your trusted electronics store — quality devices & secure
+              shopping
+              experience.
+            </p>
+
+            <div class="d-flex gap-3 mt-3">
+
+              <a href="#" class="social-icon">
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+
+              <a href="#" class="social-icon">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+
+              <a href="#" class="social-icon">
+                <i class="fa-brands fa-twitter"></i>
+              </a>
+
+              <a href="#" class="social-icon">
+                <i class="fa-brands fa-whatsapp"></i>
+              </a>
+
+            </div>
+          </div>
+          <!-- newsletter -->
+          <div class="col-md-4 mb-4">
+            <h5 class="fw-bold mb-3">Stay Updated</h5>
+            <p class="text-muted">Subscribe to receive new offers & product
+              updates</p>
+
+            <div class="input-group mb-3">
+              <input type="email" class="form-control newsletter-input"
+                placeholder="Enter your email">
+              <button class="btn btn-orange">Subscribe</button>
+            </div>
+
+            <div class="contact-box mt-3">
+              <i class="fa-regular fa-envelope contact-icon"></i>
+              <span>Contact Us</span>
+            </div>
+          </div>
+
+          <!-- links -->
+          <div class="col-md-4 mb-4">
+            <h5 class="fw-bold mb-3">Store Links</h5>
+
+            <ul class="list-unstyled footer-links">
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Contact Support</a></li>
+              <li><a href="#">Return & Exchange Policy</a></li>
+              <li><a href="#">Terms & Conditions</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+          </div>
+          <div class="bottom_footer py-3">
+            <div class="container">
+              <div
+                class="d-flex justify-content-between align-items-center flex-wrap">
+
+                <p class="m-0">
+                  &copy; <span>ElectroZone</span> All Rights Reserved.
+                </p>
+
+                <div class="payment_img">
+                  <img src="img/payment_method.png" alt="payment methods">
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </footer>
+
+        <!-- Bootstrap JS -->
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <!--swiper js -->
+        <script src="js/swiper-bundle.min.js"></script>
+        <!--product home-->
+        <script src="js/items_home.js"></script>
+        <!-- Custom JS -->
+        <script src="js/main.js"></script>
+      </body>
+
+    </html>

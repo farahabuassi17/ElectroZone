@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ElectroZone | متجر الأجهزة</title>
+
+        <link rel="icon" href="img/icon.png">
+
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+        <!-- File CSS -->
+        <link rel="stylesheet" href="css/style.css">
+        <!-- Bootstrap CSS -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    </head>
+    <body>
+
+        <div class="cart">
+            <div class="top_cart">
+                <h3>Cart Items : <span class="Count_item_cart">0</span></h3>
+                <span onclick="open_close_cart()" class="close_cart"><i
+                        class="fa-regular fa-circle-xmark"></i></span>
+            </div>
+
+            <div class="items_in_cart" id="cart_items">
+
+            </div>
+
+            <div class="bottom_cart">
+                <div class="total">
+                    <p>subtotal</p>
+                    <p class="price_cart_toral">$0</p>
+                </div>
+
+                <div class="button_cart">
+                    <a href="index.html" class="btn_cart btn">Checkout</a>
+                    <span onclick="open_close_cart()"
+                        class="btn_add_cart trans_bg btn">Shop More</span>
+                </div>
+            </div>
+
+        </div>
+
+        <header>
+            <!-- top header -->
+            <div class=" top_header py-3">
+                <div class="row container">
+                    <div class="col logo_title">
+                        <a href="#" class="logo">
+                            <img src="img/icon.png" alt="icon">
+                            <h1 class="title">ElectroZone</h1>
+                        </a>
+                    </div>
+                    <div class="col">
+                        <form action class="search_box">
+                            <div class="select_box">
+                                <select id="category" name="category">
+                                    <option value="All Categories">All
+                                        Categories</option>
+                                    <option
+                                        value="Electronics & Digita">Electronics
+                                        &
+                                        Digita</option>
+                                    <option value="Phones & Tablet">Phones &
+                                        Tablety</option>
+                                    <option value="Watches">Watches</option>
+                                    <option
+                                        value="Headphones">Headphones</option>
+                                    <option value="Laptops & Computers">Laptops
+                                        &
+                                        Computers</option>
+                                    <option value="Accesories">Accesories
+                                        Phones</option>
+                                </select>
+                            </div>
+                            <input type="text" name="search" id="search"
+                                placeholder="Search for Products" required>
+
+                            <button type="submit">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </button>
+                        </form>
+                    </div>
+                    <div class=" col-lg-3 header_icons justify-content-end">
+                        <div class="icon">
+                            <a href="#">
+                                <i class="fa-regular fa-heart"></i>
+                                <span class="count count_favourite">0</span>
+                            </a>
+                        </div>
+
+                        <div onclick="open_close_cart()" class="icon">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <span class="count count_item_header"
+                                id="cart_count">0</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--bottom header -->
+            <div class="bottom_header py-3">
+                <div class="container">
+                    <nav class="nav">
+                        <div class="category_nav">
+                            <div onclick="Open_Categ_list()"
+                                class="category_btn">
+                                <i class="fa-solid fa-bars"></i>
+                                <p>Browse Category</p>
+                                <i class="fa-solid fa-angle-down"></i>
+                            </div>
+
+                            <div class="category_nav_list">
+                                <a href="#">Top 10 Offers</a>
+                                <a href="#">Electronics & Digita</a>
+                                <a href="#">Phones & Tablet</a>
+                                <a href="#">Watches</a>
+                                <a href="#">Headphones</a>
+                                <a href="#">Laptops & Computers</a>
+                            </div>
+                        </div>
+                        <!-- Burger Icon (Mobile) -->
+                        <div class="burger_menu" onclick="toggleMenu()">
+                            <i class="fa-solid fa-bars"></i>
+                        </div>
+                        <ul class="nav_links">
+
+                            <li class="active"><a
+                                    href="index.html">Home</a></li>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Accesories</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Contact</a></li>
+
+                        </ul>
+
+                    </nav>
+                    <div class="login_signup btns">
+                        <a href="#" class="btn">Login <i
+                                class="fa-solid fa-right-to-bracket"></i></a>
+
+                        <a href="#" class="btn">Sign UP <i
+                                class="fa-solid fa-user-plus"></i></a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section class="checkout">
+            <form action>
+
+                <div class="container">
+                    <div class="ordersummary">
+                        <h1>Order Summary</h1>
+
+                        <div class="items">
+
+                        </div>
+
+                        <div class="bottom_summary">
+                            <div class="shop_table">
+                                <p>Subtotal :</p>
+                                <span class="subtotal_checkout">$325.00</span>
+                            </div>
+
+                            <div class="shop_table">
+                                <p>Shipping :</p>
+                                <span class>$20.00</span>
+                            </div>
+
+                            <div class="shop_table">
+                                <p>total :</p>
+                                <span class="total_checkout">$325.00</span>
+                            </div>
+
+                            <div class="button_div">
+                                <button type="submit">Place order</button>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="input_info">
+
+                    </div>
+                </div>
+            </form>
+        </section>
+
+        <footer class="py-5 footer-section">
+            <div class="container">
+
+                <div class="row">
+
+                    <!-- logo & about -->
+                    <div class="col-md-4 mb-4 align-self-start">
+                        <h3 class="fw-bold text-success">ElectroZone</h3>
+                        <p class="text-muted">
+                            Your trusted electronics store — quality devices &
+                            secure
+                            shopping
+                            experience.
+                        </p>
+
+                        <div class="d-flex gap-3 mt-3">
+
+                            <a href="#" class="social-icon">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
+
+                            <a href="#" class="social-icon">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+
+                            <a href="#" class="social-icon">
+                                <i class="fa-brands fa-twitter"></i>
+                            </a>
+
+                            <a href="#" class="social-icon">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </a>
+
+                        </div>
+                    </div>
+                    <!-- newsletter -->
+                    <div class="col-md-4 mb-4">
+                        <h5 class="fw-bold mb-3">Stay Updated</h5>
+                        <p class="text-muted">Subscribe to receive new offers &
+                            product
+                            updates</p>
+
+                        <div class="input-group mb-3">
+                            <input type="email"
+                                class="form-control newsletter-input"
+                                placeholder="Enter your email">
+                            <button class="btn btn-orange">Subscribe</button>
+                        </div>
+
+                        <div class="contact-box mt-3">
+                            <i class="fa-regular fa-envelope contact-icon"></i>
+                            <span>Contact Us</span>
+                        </div>
+                    </div>
+
+                    <!-- links -->
+                    <div class="col-md-4 mb-4">
+                        <h5 class="fw-bold mb-3">Store Links</h5>
+
+                        <ul class="list-unstyled footer-links">
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Contact Support</a></li>
+                            <li><a href="#">Return & Exchange Policy</a></li>
+                            <li><a href="#">Terms & Conditions</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                    <div class="bottom_footer py-3">
+                        <div class="container">
+                            <div
+                                class="d-flex justify-content-between align-items-center flex-wrap">
+
+                                <p class="m-0">
+                                    &copy; <span>ElectroZone</span> All Rights
+                                    Reserved.
+                                </p>
+
+                                <div class="payment_img">
+                                    <img src="img/payment_method.png"
+                                        alt="payment methods">
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+                <script src="js/bootstrap.bundle.min.js"></script>
+                <script src="JS/main.js"></script>
+            </body>
+        </html>
